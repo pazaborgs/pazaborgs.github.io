@@ -7,7 +7,7 @@
 <meta name="description" content="Compras públicas de TIC em Santos, medidas com um pipeline de dados. Portfólio de Patrick Regis: dbt, BigQuery, Terraform e LLMs aplicados a dados públicos.">
 <meta property="og:title" content="Compras públicas de TIC em Santos, medidas com um pipeline de dados">
 <meta property="og:description" content="Portfólio de engenharia de dados de Patrick Regis.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230F5C6B%22/><text x=%2250%22 y=%2272%22 font-size=%2266%22 font-weight=%22800%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>P</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230F5C6B%22/><ellipse cx=%2250%22 cy=%2228%22 rx=%2224%22 ry=%229%22 fill=%22none%22 stroke=%22white%22 stroke-width=%225.5%22/><path d=%22M26 28v44c0 5 10.7 9 24 9s24-4 24-9V28%22 fill=%22none%22 stroke=%22white%22 stroke-width=%225.5%22/><path d=%22M26 43c0 5 10.7 9 24 9s24-4 24-9%22 fill=%22none%22 stroke=%22white%22 stroke-width=%225.5%22/><path d=%22M26 58c0 5 10.7 9 24 9s24-4 24-9%22 fill=%22none%22 stroke=%22white%22 stroke-width=%225.5%22/></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
@@ -81,8 +81,6 @@ tr:last-child td{border-bottom:0}
 .btn{display:inline-block;padding:11px 20px;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:700}
 .btn.p{background:#fff;color:var(--teal)}
 .btn:hover{background:var(--red);border-color:var(--red);color:#fff}
-.refs{font-size:.95rem;color:var(--muted)}
-.refs ol{margin:0;padding-left:22px}
 footer{padding:20px 0 32px;font-size:.9rem;color:var(--muted)}
 @media (max-width:860px){
 .pipe{grid-template-columns:1fr;gap:16px}
@@ -96,7 +94,7 @@ footer{padding:20px 0 32px;font-size:.9rem;color:var(--muted)}
 <body>
 <div class="wrap">
 <nav aria-label="Principal">
-  <a class="me" href="#topo">Patrick Regis · Dados públicos</a>
+  <a class="me" href="#topo">Patrick Regis · Engenharia &amp; Análise de Dados</a>
   <ul>
     <li><a href="#metodo">Método</a></li>
     <li><a href="#resultados">Resultados</a></li>
@@ -165,8 +163,8 @@ footer{padding:20px 0 32px;font-size:.9rem;color:var(--muted)}
 <div class="wrap">
   <h2>Outros projetos</h2>
   <article class="proj">
-    <h3>Acervo da UME dos Andradas II</h3>
-    <div><p>Agentes LLM (LangGraph + Gemini) classificam mais de 1.200 livros por gênero em pipeline diário no GCP, com Terraform, GitHub Actions, Reverse ETL para o Google Workspace e painel de KPIs em uso contínuo pela escola.</p>
+    <h3>Classificação de gêneros literários assistida por IA</h3>
+    <div><p>Desenvolvido para a biblioteca da UME dos Andradas II (Prefeitura de Santos): agentes LLM (LangGraph + Gemini) classificam mais de 1.200 livros por gênero em pipeline diário no GCP, com Terraform, GitHub Actions, Reverse ETL para o Google Workspace e painel de KPIs em uso contínuo pela gestão escolar.</p>
     <div class="lk"><a href="https://github.com/pazaborgs/book_genre_classifier_V2" target="_blank" rel="noopener noreferrer">Código</a><a href="https://bookgenreclassifierv2-b3zq5g7tfrpedupkxvixux.streamlit.app/" target="_blank" rel="noopener noreferrer">Dashboard (IA)</a><a href="https://github.com/pazaborgs/dashboard_biblioteca_escolar" target="_blank" rel="noopener noreferrer">Dashboard (KPIs)</a></div></div>
   </article>
   <article class="proj">
@@ -231,18 +229,6 @@ footer{padding:20px 0 32px;font-size:.9rem;color:var(--muted)}
 </div>
 </section>
 
-<section class="refs">
-<div class="wrap">
-  <p class="cap">Referências</p>
-  <ol>
-    <li><a href="https://github.com/pazaborgs/pncp-tic-analytics-pipeline" target="_blank" rel="noopener noreferrer">Pipeline ELT de compras públicas de TIC (PNCP)</a></li>
-    <li><a href="https://github.com/pazaborgs/book_genre_classifier_V2" target="_blank" rel="noopener noreferrer">Classificação do acervo da UME dos Andradas II</a></li>
-    <li><a href="https://github.com/pazaborgs/fraud_detection_project_eng" target="_blank" rel="noopener noreferrer">Detecção de fraude bancária com Databricks</a></li>
-    <li><a href="https://github.com/pazaborgs/cnn_brain_tumor_classification_V2" target="_blank" rel="noopener noreferrer">Classificação de tumores cerebrais em MRI</a></li>
-  </ol>
-</div>
-</section>
-
-<footer><div class="wrap">Patrick Regis · Santos, SP</div></footer>
+<footer><div class="wrap">Patrick Regis · Engenharia &amp; Análise de Dados · Santos, SP</div></footer>
 </body>
 </html>
