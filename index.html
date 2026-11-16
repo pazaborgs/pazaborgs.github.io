@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patrick Regis · Engenharia de Dados</title>
+<meta name="description" content="Compras públicas de TIC em Santos, medidas com um pipeline de dados. Portfólio de Patrick Regis: dbt, BigQuery, Terraform e LLMs aplicados a dados públicos.">
+<meta property="og:title" content="Compras públicas de TIC em Santos, medidas com um pipeline de dados">
+<meta property="og:description" content="Portfólio de engenharia de dados de Patrick Regis.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230F5C6B%22/><text x=%2250%22 y=%2272%22 font-size=%2266%22 font-weight=%22800%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22sans-serif%22>P</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FCFCFB;--ink:#1d2b30;--muted:#4b5b61;--line:#cfd8dc;--teal:#0F5C6B;--red:#B3261E;--tint:#E3F0F2;
+--serif:"Playfair Display",Georgia,serif;--sans:"Lato",system-ui,-apple-system,"Segoe UI",sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.125rem/1.65 var(--sans)}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 28px}
+h1,h2,h3{font-family:var(--serif);margin:0;line-height:1.12}
+nav{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 24px;padding:18px 0 12px;border-bottom:3px solid var(--teal);font-weight:700;font-size:.95rem}
+nav .me{color:var(--teal);text-decoration:none}
+nav ul{display:flex;flex-wrap:wrap;gap:6px 22px;list-style:none;margin:0;padding:0}
+nav ul a{color:var(--muted);text-decoration:none;font-weight:400}
+nav ul a:hover{color:var(--ink);text-decoration:underline;text-underline-offset:4px}
+.hero{padding:52px 0 40px}
+.hero h1{font-size:clamp(2.1rem,5.2vw,3.5rem);font-weight:800;max-width:19ch}
+.sub{font-size:1.25rem;color:var(--muted);max-width:60ch;margin:18px 0 10px}
+.by{font-size:.95rem;color:var(--muted);margin:0 0 30px}
+.abs{max-width:68ch;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin:0 0 36px}
+.nums{display:flex;flex-wrap:wrap;gap:20px 56px}
+.nums div{flex:1 1 200px;color:var(--muted)}
+.nums b{display:block;font:800 2.5rem/1.1 var(--serif);color:var(--teal)}
+.nums .r b{color:var(--red)}
+section{padding:44px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.6rem,3.2vw,2.1rem);font-weight:700;margin-bottom:14px}
+.lead{max-width:66ch;margin:0 0 22px}
+.pipe{list-style:none;margin:26px 0 0;padding:0;display:grid;grid-template-columns:repeat(6,1fr);gap:14px}
+.node{position:relative;background:var(--tint);border:2px solid var(--teal);padding:10px 12px 12px}
+.node b{display:block;font:700 1rem var(--serif)}
+.node span{display:block;font-size:.82rem;line-height:1.35;color:var(--muted);margin-top:3px}
+.node:not(:last-child)::after{content:"";position:absolute;right:-14px;top:50%;width:14px;height:2px;background:var(--teal)}
+@media (prefers-reduced-motion:no-preference){
+.node{animation:lit .6s ease-out both;animation-delay:calc(var(--i)*.4s + .3s)}
+@keyframes lit{from{background:var(--bg);border-color:var(--line)}60%{border-color:var(--red)}to{background:var(--tint);border-color:var(--teal)}}}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.cap{font-weight:700;font-size:.95rem;margin:0 0 8px}
+table{width:100%;border-collapse:collapse;border-top:2px solid var(--ink);border-bottom:2px solid var(--ink);font-size:1rem}
+th{text-align:left;padding:8px 0;border-bottom:1px solid var(--ink)}
+td{padding:9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+td:last-child,th:last-child{text-align:right;padding-left:14px;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.bars{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:center}
+.bar{display:flex;align-items:center;gap:10px}
+.bar i{display:block;height:32px;background:var(--teal)}
+.bar.r i{background:var(--red)}
+.bar b{font:800 1.4rem var(--serif);color:var(--teal)}
+.bar.r b{color:var(--red)}
+.note{font-size:.95rem;color:var(--muted);margin:14px 0 0}
+.proj{display:grid;grid-template-columns:240px 1fr;gap:6px 36px;padding:20px 0;border-top:1px solid var(--line)}
+.proj:first-of-type{border-top:0}
+.proj h3{font-size:1.25rem;font-weight:700}
+.proj p{margin:0 0 8px;max-width:62ch}
+.lk{display:flex;gap:18px;font-weight:700;font-size:.95rem}
+.about{display:grid;grid-template-columns:1.5fr 1fr;gap:56px}
+.story p{margin:0 0 16px;max-width:62ch}
+.facts{margin:0;display:grid;grid-template-columns:96px 1fr;align-content:start;border-top:3px solid var(--teal)}
+.facts dt,.facts dd{margin:0;padding:11px 0;border-bottom:1px solid var(--line);font-size:.95rem}
+.facts dt{font-weight:700;color:var(--teal)}
+.facts dd{color:var(--muted)}
+.kit{display:grid;grid-template-columns:200px 1fr;margin:0;border-top:1px solid var(--line)}
+.kit dt,.kit dd{margin:0;padding:12px 0;border-bottom:1px solid var(--line)}
+.kit dt{font:700 1.05rem var(--serif)}
+.kit dd{color:var(--muted)}
+.contact{background:var(--teal);color:#fff;border:0}
+.contact p{max-width:56ch;margin:0 0 22px}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;padding:11px 20px;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:700}
+.btn.p{background:#fff;color:var(--teal)}
+.btn:hover{background:var(--red);border-color:var(--red);color:#fff}
+.refs{font-size:.95rem;color:var(--muted)}
+.refs ol{margin:0;padding-left:22px}
+footer{padding:20px 0 32px;font-size:.9rem;color:var(--muted)}
+@media (max-width:860px){
+.pipe{grid-template-columns:1fr;gap:16px}
+.node:not(:last-child)::after{right:auto;left:26px;top:auto;bottom:-16px;width:2px;height:16px}
+.res,.about{grid-template-columns:1fr;gap:32px}
+.proj{grid-template-columns:1fr}
+.kit{grid-template-columns:1fr}
+.kit dt{border-bottom:0;padding-bottom:0}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Principal">
+  <a class="me" href="#topo">Patrick Regis · Dados públicos</a>
+  <ul>
+    <li><a href="#metodo">Método</a></li>
+    <li><a href="#resultados">Resultados</a></li>
+    <li><a href="#projetos">Outros projetos</a></li>
+    <li><a href="#sobre">Sobre</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="topo">
+  <h1>Compras públicas de TIC em Santos, medidas com um pipeline de dados</h1>
+  <p class="sub">Um pipeline que coleta, testa e classifica contratações do PNCP, e o que ele mostra sobre R$ 143,3 milhões homologados em TIC.</p>
+  <p class="by">Por Patrick Regis · Bacharel em Ciência de Dados · Santos (SP) · Dados: PNCP · <a href="https://github.com/pazaborgs/pncp-tic-analytics-pipeline" target="_blank" rel="noopener noreferrer">Código no GitHub</a></p>
+  <p class="abs"><b>Resumo.</b> Compras públicas ficam espalhadas em editais difíceis de comparar, e filtros por palavra-chave deixam muita coisa de fora. Construí um pipeline que coleta os dados do PNCP, organiza em camadas testadas e usa um LLM para identificar o que realmente é tecnologia.</p>
+  <div class="nums">
+    <div><b>R$ 143,3M</b>homologados em TIC (Santos/SP)</div>
+    <div class="r"><b>5.176</b>contratações classificadas</div>
+    <div><b>89%</b>de precisão do classificador (±4,6 p.p.)</div>
+  </div>
+</header>
+</div>
+
+<section id="metodo">
+<div class="wrap">
+  <h2>Como foi feito</h2>
+  <p class="lead">Cada etapa tem um critério de qualidade. A carga é incremental e idempotente (hash SHA-256), então pode rodar de novo sem duplicar nada. O dbt organiza o dado em camadas Silver e Gold, com 22 testes. O Gemini classifica cada contratação com saída estruturada (Pydantic), e a precisão foi medida em amostragem estratificada. A infraestrutura é criada com Terraform e tudo roda no free tier.</p>
+  <ol class="pipe">
+    <li class="node" style="--i:0"><b>API PNCP</b><span>coleta incremental</span></li>
+    <li class="node" style="--i:1"><b>Parquet</b><span>armazenamento colunar</span></li>
+    <li class="node" style="--i:2"><b>BigQuery</b><span>criado com Terraform</span></li>
+    <li class="node" style="--i:3"><b>dbt</b><span>Silver e Gold, 22 testes</span></li>
+    <li class="node" style="--i:4"><b>Gemini + Pydantic</b><span>5.176 classificadas</span></li>
+    <li class="node" style="--i:5"><b>SQL</b><span>14 análises</span></li>
+  </ol>
+</div>
+</section>
+
+<section id="resultados">
+<div class="wrap">
+  <h2>O que apareceu</h2>
+  <p class="lead">As 14 consultas no BigQuery mostram economia, dinheiro parado e um desequilíbrio entre o volume de editais e o orçamento.</p>
+  <div class="res">
+    <div>
+      <p class="cap">Tabela 1. Principais indicadores</p>
+      <table>
+        <tr><th>Indicador</th><th>Valor</th></tr>
+        <tr><td>Economia identificada (deságio médio de 31% a 42% nos pregões)</td><td>R$ 81,49M</td></tr>
+        <tr><td>Processos encerrados sem homologação (valor estimado)</td><td>R$ 89,32M</td></tr>
+        <tr><td>Pregões que usam registro de preços (SRP)</td><td>7,9%</td></tr>
+        <tr><td>Processos de TIC achados a mais que pelo regex</td><td>+75,6%</td></tr>
+      </table>
+    </div>
+    <div>
+      <p class="cap">Figura 1. Hardware: participação nos editais e no orçamento (%)</p>
+      <div class="bars">
+        <span>Editais</span><div class="bar"><i style="width:54.2%"></i><b>54,2%</b></div>
+        <span>Orçamento</span><div class="bar r"><i style="width:11.2%"></i><b>11,2%</b></div>
+      </div>
+      <p class="note">Em média, cada edital de hardware pesa bem menos no orçamento do que os demais. Fonte: PNCP.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projetos">
+<div class="wrap">
+  <h2>Outros projetos</h2>
+  <article class="proj">
+    <h3>Acervo da UME dos Andradas II</h3>
+    <div><p>Agentes LLM (LangGraph + Gemini) classificam mais de 1.200 livros por gênero em pipeline diário no GCP, com Terraform, GitHub Actions, Reverse ETL para o Google Workspace e painel de KPIs em uso contínuo pela escola.</p>
+    <div class="lk"><a href="https://github.com/pazaborgs/book_genre_classifier_V2" target="_blank" rel="noopener noreferrer">Código</a><a href="https://bookgenreclassifierv2-b3zq5g7tfrpedupkxvixux.streamlit.app/" target="_blank" rel="noopener noreferrer">Dashboard (IA)</a><a href="https://github.com/pazaborgs/dashboard_biblioteca_escolar" target="_blank" rel="noopener noreferrer">Dashboard (KPIs)</a></div></div>
+  </article>
+  <article class="proj">
+    <h3>Detecção de fraude bancária</h3>
+    <div><p>Pipeline Lakehouse em PySpark e Databricks sobre mais de 6 milhões de transações móveis em arquitetura Medallion, com feature engineering, XGBoost e MLflow (F1-Score acima de 90% em dataset sintético).</p>
+    <div class="lk"><a href="https://github.com/pazaborgs/fraud_detection_project_eng" target="_blank" rel="noopener noreferrer">Código</a></div></div>
+  </article>
+  <article class="proj">
+    <h3>Tumores cerebrais em MRI</h3>
+    <div><p>Plataforma modular de MLOps comparando quatro arquiteturas CNN em 3.264 exames, com rastreamento no MLflow e Grad-CAM em tempo real no Hugging Face e Streamlit.</p>
+    <div class="lk"><a href="https://github.com/pazaborgs/cnn_brain_tumor_classification_V2" target="_blank" rel="noopener noreferrer">Código</a><a href="https://cnnbraintumorclassificationv2-dzjnrtq4axyk3r8eue7eve.streamlit.app/" target="_blank" rel="noopener noreferrer">Dashboard</a><a href="https://huggingface.co/pazaborgs/brain_tumor_classification_V2" target="_blank" rel="noopener noreferrer">Modelos</a></div></div>
+  </article>
+  <article class="proj">
+    <h3>Análise e BI</h3>
+    <div><p>Análise de mercado da Steam (Power BI, 27 mil+ jogos, métrica ponderada em DAX) e painel espacial de segurança pública de Santos/SP com dados da SSP-SP (GeoPandas, Folium, Streamlit e Safety Score).</p>
+    <div class="lk"><a href="https://github.com/pazaborgs/dashboard_steam_games" target="_blank" rel="noopener noreferrer">Steam (Código)</a><a href="https://github.com/pazaborgs/seguranca_santos_analise_criminalidade" target="_blank" rel="noopener noreferrer">Segurança (Código)</a><a href="https://djm7djbwzttvjbqcdvvjby.streamlit.app/" target="_blank" rel="noopener noreferrer">Segurança (Dashboard)</a></div></div>
+  </article>
+</div>
+</section>
+
+<section id="sobre">
+<div class="wrap">
+  <h2>Sobre mim</h2>
+  <div class="about">
+    <div class="story">
+      <p>Desde maio de 2024 atuo como inspetor de alunos na rede pública de Santos, onde conheci na prática os gargalos operacionais do ambiente escolar.</p>
+      <p>No final de 2025 atuei como estagiário em Ciência de Dados na UME dos Andradas II, automatizando a classificação do acervo da biblioteca e criando os painéis de KPIs que a gestão escolar segue utilizando. Foi meu primeiro pipeline em produção — e o que mais me interessou foi tudo o que sustenta o dashboard: coletar, testar e manter o dado confiável.</p>
+      <p>Concluí o Bacharelado em Ciência de Dados na UNIVESP em fevereiro de 2026. Hoje aprofundo minha base no Data Engineering Zoomcamp e construo projetos com foco em dbt, BigQuery, Terraform, CI/CD e qualidade de dados, buscando oportunidades como Engenheiro de Dados, Analytics Engineer ou Analista de Dados.</p>
+    </div>
+    <dl class="facts">
+      <dt>Agora</dt><dd>Inspetor de alunos (desde mai/2024) e estudante do Data Engineering Zoomcamp</dd>
+      <dt>Estágio</dt><dd>Data Science, Prefeitura de Santos (nov–dez/2025)</dd>
+      <dt>Formação</dt><dd>Bacharelado em Ciência de Dados, UNIVESP (fev/2026)</dd>
+      <dt>Certificados</dt><dd>IBM AI Fundamentals, Cisco Python Essentials 2, ENAP Estatística para Análise de Dados</dd>
+    </dl>
+  </div>
+</div>
+</section>
+
+<section id="stack">
+<div class="wrap">
+  <h2>Stack</h2>
+  <dl class="kit">
+    <dt>Linguagens</dt><dd>Python, SQL</dd>
+    <dt>Dados</dt><dd>BigQuery, Databricks, PySpark, dbt, Parquet, ELT/ETL, Reverse ETL, Arquitetura Medallion, APIs REST, Data Quality</dd>
+    <dt>Infra e MLOps</dt><dd>GCP, Terraform, Docker, GitHub Actions, MLflow</dd>
+    <dt>IA e ML</dt><dd>LangGraph, Pydantic, LLMs/NLP, TensorFlow, Scikit-learn</dd>
+    <dt>Análise e BI</dt><dd>Power BI, DAX, Power Query, Excel/Google Sheets, Estatística aplicada</dd>
+  </dl>
+</div>
+</section>
+
+<section class="contact" id="contato">
+<div class="wrap">
+  <h2>Contato</h2>
+  <p>Aberto a oportunidades júnior, trainee ou PJ em Engenharia de Dados, Analytics Engineering e Análise de Dados. O e-mail é o caminho mais rápido.</p>
+  <div class="btns">
+    <a class="btn p" href="mailto:patrickrgs02@gmail.com">patrickrgs02@gmail.com</a>
+    <a class="btn" href="https://www.linkedin.com/in/patrickrgsanjos" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a class="btn" href="https://github.com/pazaborgs" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+</div>
+</section>
+
+<section class="refs">
+<div class="wrap">
+  <p class="cap">Referências</p>
+  <ol>
+    <li><a href="https://github.com/pazaborgs/pncp-tic-analytics-pipeline" target="_blank" rel="noopener noreferrer">Pipeline ELT de compras públicas de TIC (PNCP)</a></li>
+    <li><a href="https://github.com/pazaborgs/book_genre_classifier_V2" target="_blank" rel="noopener noreferrer">Classificação do acervo da UME dos Andradas II</a></li>
+    <li><a href="https://github.com/pazaborgs/fraud_detection_project_eng" target="_blank" rel="noopener noreferrer">Detecção de fraude bancária com Databricks</a></li>
+    <li><a href="https://github.com/pazaborgs/cnn_brain_tumor_classification_V2" target="_blank" rel="noopener noreferrer">Classificação de tumores cerebrais em MRI</a></li>
+  </ol>
+</div>
+</section>
+
+<footer><div class="wrap">Patrick Regis · Santos, SP</div></footer>
+</body>
+</html>
