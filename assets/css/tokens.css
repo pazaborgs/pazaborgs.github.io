@@ -1,0 +1,30 @@
+/* ==========================================================================
+   TOKENS — Paleta Editorial (Our World in Data) e Tipografia
+   Edite aqui para mudar cores ou fontes no site inteiro.
+   ========================================================================== */
+:root {
+  /* Superficies e bordas */
+  --page: #FFFFFF;
+  --card: #F8F8F6;
+  --alt: #F1F1EF;
+  --border: #DDDCD8;
+  --line: #E6E5E2;
+
+  /* Cores de dados e destaques */
+  --blue: #1E5098;
+  --blue2: #9DBDEA;
+  --gold: #E3B23C;
+  --gold-soft: #FBF4E2;
+  --sand: #E6D9BF;
+  --rose: #E8A29D;
+  --red: #C93C37;
+  --crimson: #8F2622;
+  --gray: #A5A5A5;
+
+  /* Tipografia */
+  --ink: #1A1A1A;
+  --muted: #555555;
+  --note: #767676;
+  --serif: "Playfair Display", Georgia, serif;
+  --sans: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+}

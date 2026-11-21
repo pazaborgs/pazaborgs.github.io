@@ -1,0 +1,214 @@
+/* ==========================================================================
+   CHARTS — Cards de graficos, barras empilhadas, linha de referencia e tabelas
+   ========================================================================== */
+.charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.chart {
+  margin: 0;
+  background: var(--card);
+  border: 1px solid var(--border);
+  padding: 20px 22px;
+}
+
+.chart.wide {
+  grid-column: 1 / -1;
+}
+
+.chart figcaption b {
+  display: block;
+  font: 700 1.05rem var(--sans);
+  color: var(--ink);
+}
+
+.chart figcaption i {
+  display: block;
+  font-size: .92rem;
+  color: var(--muted);
+  margin: 2px 0 14px;
+}
+
+/* Legenda */
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  font-size: .85rem;
+  color: var(--muted);
+  margin: 0 0 12px;
+  padding: 0;
+  list-style: none;
+}
+
+.legend li::before {
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: -1px;
+  background: var(--c);
+}
+
+/* Barras 100% empilhadas */
+.stack {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 12px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.stack > span {
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+.sb {
+  display: flex;
+  height: 34px;
+  border-top: 1px solid var(--page);
+}
+
+.sb.tall {
+  height: 42px;
+}
+
+.sb i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: normal;
+  font-size: .85rem;
+  font-weight: 700;
+  border-right: 1px solid var(--page);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Cores das series */
+.c-hw   { background: var(--gold); color: var(--ink); }
+.c-net  { background: var(--blue2); color: var(--ink); }
+.c-sw   { background: var(--blue); color: #fff; }
+.c-svc  { background: var(--red); color: #fff; }
+.c-sand { background: var(--sand); color: var(--ink); }
+.c-gray { background: var(--gray); color: var(--ink); }
+
+/* Barras horizontais com linha de referencia */
+.hb {
+  position: relative;
+  padding-top: 4px;
+}
+
+.hrow {
+  display: grid;
+  grid-template-columns: 136px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin: 7px 0;
+  font-size: .92rem;
+  color: var(--muted);
+}
+
+.htrack {
+  position: relative;
+  height: 24px;
+}
+
+.hfill {
+  height: 100%;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 6px;
+  color: #fff;
+  font-weight: 700;
+  font-size: .82rem;
+}
+
+.hfill.ref {
+  background: var(--gray);
+  color: var(--ink);
+}
+
+.refline {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  left: 14%;
+  border-left: 2px dashed var(--red);
+}
+
+.refrow {
+  display: grid;
+  grid-template-columns: 136px 1fr;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.reftrack {
+  position: relative;
+  height: 18px;
+}
+
+.reflabel {
+  position: absolute;
+  left: 14%;
+  transform: translateX(-12%);
+  font-size: .8rem;
+  color: var(--red);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Tabelas dentro de cards */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  font-size: .95rem;
+  margin-top: 16px;
+}
+
+td {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+td:last-child {
+  text-align: right;
+  padding-left: 14px;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+td.pos { color: var(--blue); }
+td.neg { color: var(--red); }
+
+/* Rodape do grafico */
+.src {
+  font-size: .82rem;
+  color: var(--note);
+  margin: 14px 0 0;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 860px) {
+  .charts {
+    grid-template-columns: 1fr;
+  }
+  .hrow, .refrow {
+    grid-template-columns: 108px 1fr;
+  }
+}
